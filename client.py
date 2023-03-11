@@ -29,4 +29,4 @@ with sk:
             result += sk.recv(1024)
             received_result_size += len(result)
 
-        # print(f"server {host[0]}:{host[1]}\n", result.decode('gbk'))
+        print(f"server {host[0]}:{host[1]}\n", result.decode('gbk'))

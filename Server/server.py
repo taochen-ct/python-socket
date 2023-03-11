@@ -9,7 +9,7 @@ import socketserver
 import json
 import settings
 from logger import logger
-from Server.functions import execute_command
+from functions import ExecuteCommand
 
 
 class RequestHandler(socketserver.BaseRequestHandler):
@@ -23,7 +23,7 @@ class RequestHandler(socketserver.BaseRequestHandler):
             if not cmd:
                 break
 
-            terminal = execute_command(cmd, self.client_address)
+            terminal = ExecuteCommand(cmd, self.client_address)
             execute_result = terminal.execute()
 
             header = json.dumps({
@@ -39,13 +39,13 @@ class RequestHandler(socketserver.BaseRequestHandler):
         self.request.close()
 
 
-class myThreadingTCPServer(socketserver.ThreadingTCPServer):
+class MyThreadingTCPServer(socketserver.ThreadingTCPServer):
     allow_reuse_address = True
 
 
 def start_server(server_adder=(settings.SERVER_HOST, settings.SERVER_PORT)):
     try:
-        sk = myThreadingTCPServer(server_adder, RequestHandler)
+        sk = MyThreadingTCPServer(server_adder, RequestHandler)
         sk.serve_forever()
     except Exception as e:
         logger.critical(f"{e}")

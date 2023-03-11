@@ -1,0 +1,6 @@
+2023-03-11 20:09:42 Thread-1 (process_request_thread):10400 [test_logger] INFO [D:\Project\socketCorrespondence\Server\functions.py:67] CLIENT:127.0.0.1:63780 get D:\Project\socketCorrespondence\client.py
+2023-03-11 20:09:56 Thread-1 (process_request_thread):10400 [test_logger] INFO [D:\Project\socketCorrespondence\Server\functions.py:67] CLIENT:127.0.0.1:63780 get D:\Project\socketCorrespondence
+2023-03-11 20:09:56 Thread-1 (process_request_thread):10400 [test_logger] ERROR [D:\Project\socketCorrespondence\Server\functions.py:18] 127.0.0.1:63780 string argument without an encoding
+2023-03-11 20:12:29 Thread-1 (process_request_thread):22440 [test_logger] INFO [D:\Project\socketCorrespondence\Server\functions.py:67] CLIENT:127.0.0.1:63814 get D:\Project\socketCorrespondence
+2023-03-11 20:12:29 Thread-1 (process_request_thread):22440 [test_logger] ERROR [D:\Project\socketCorrespondence\Server\functions.py:18] 127.0.0.1:63814 string argument without an encoding
+2023-03-11 20:15:03 Thread-1 (process_request_thread):11036 [test_logger] INFO [D:\Project\socketCorrespondence\Server\functions.py:67] CLIENT:127.0.0.1:63842 get entre command>>get
