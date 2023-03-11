@@ -18,10 +18,10 @@ with sk:
         if cmd == "q": break
         if cmd == "": continue
         # senf terminal command
-        sk.send(cmd.encode("gbk"))
+        sk.send(cmd.encode("utf-8"))
         # receive executed result header(data size)
-        header_length = int(sk.recv(4).decode("gbk"))
-        header = json.loads(sk.recv(header_length).decode("gbk"))
+        header_length = int(sk.recv(4).decode("utf-8"))
+        header = json.loads(sk.recv(header_length).decode("utf-8"))
 
         received_result_size = 0
         result = b''
@@ -29,4 +29,4 @@ with sk:
             result += sk.recv(1024)
             received_result_size += len(result)
 
-        print(f"server {host[0]}:{host[1]}\n", result.decode('gbk'))
+        print(f"server {host[0]}:{host[1]}\n", result.decode('utf-8'))

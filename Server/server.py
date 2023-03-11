@@ -17,7 +17,7 @@ class RequestHandler(socketserver.BaseRequestHandler):
     def handle(self) -> None:
         while True:
             try:
-                cmd = self.request.recv(1024).decode('gbk')
+                cmd = self.request.recv(1024).decode('utf-8')
             except:
                 break
             if not cmd:
@@ -30,7 +30,7 @@ class RequestHandler(socketserver.BaseRequestHandler):
                 "client_address": self.client_address,
                 "result_size": len(execute_result),
             })
-            header_length = bytes(str(len(header)), "gbk").zfill(4)
+            header_length = bytes(str(len(header)), "utf-8").zfill(4)
 
             self.request.send(header_length)
             self.request.send(header.encode('gbk'))

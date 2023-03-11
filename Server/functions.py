@@ -37,6 +37,7 @@ class Functions:
             shell=True,
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
+            universal_newlines=True
         )
         execute_result = terminal.stdout.read()
         return execute_result
@@ -64,7 +65,7 @@ class ExecuteCommand(Functions):
         func = self.split_command(self.cmd)
         result = func(self.cmd)
         logger.info(f"CLIENT:{self.addr[0]}:{self.addr[1]} {self.cmd}")
-        return result if isinstance(result, bytes) else bytes(result, "gbk")
+        return result if isinstance(result, bytes) else bytes(result, "utf-8")
 
 
 FUNCTION = {
