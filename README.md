@@ -5,4 +5,4 @@ socketserver/remote execute command/get file
 Server -> run main.py
 
 
-vscode push success
+pycharm
